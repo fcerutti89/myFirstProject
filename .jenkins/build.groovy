@@ -17,7 +17,11 @@ node {
       }
    }
    stage('Dockerbuild') {
-      docker 'build -f .docker/build/Dockerfile -t demo/spring:maven-3.3-jdk-8 .'
+      checkout scm
+      //docker.withRegistry('https://registry.example.com', 'credentials-id') {
+      def customImage = docker.build("my-image:${env.BUILD_ID}", "./.docker/build/Dockerfile")
+      //customImage.push()
+      //}
    }
 //   stage('Upload dockerfile in repository') {
 //      echo "upload"
