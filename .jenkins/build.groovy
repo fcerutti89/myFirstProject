@@ -16,9 +16,9 @@ node {
          bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
       }
    }
-//   stage('Docker build') {
-//      docker build -f Dockerfile -t demo/spring:maven-3.3-jdk-8 .
-//   }
+   stage('Dockerbuild') {
+      docker build -f .docker/build/Dockerfile -t demo/spring:maven-3.3-jdk-8 .
+   }
 //   stage('Upload dockerfile in repository') {
 //      echo "upload"
 //   }
