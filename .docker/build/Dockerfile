@@ -1,5 +1,5 @@
 # Dockerfile
-
+FROM scratch
 MAINTAINER Author f.cerutti@reply.it
 RUN apt-get update && \
     apt-get install -yq --no-install-recommends wget pwgen ca-certificates && \

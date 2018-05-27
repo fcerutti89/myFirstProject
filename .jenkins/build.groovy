@@ -18,10 +18,10 @@ node {
    }
    stage('Dockerbuild') {
       checkout scm
-      //docker.withRegistry('https://registry.example.com', 'credentials-id') {
-      def customImage = docker.build("my-image:${env.BUILD_ID}", "./.docker/build")
-      //customImage.push()
-      //}
+      docker.withRegistry('http://10.142.0.3') {
+      def customImage = docker.build("myFirstProject:${env.BUILD_ID}", "./.docker/build")
+      customImage.push()
+      }
    }
 //   stage('Upload dockerfile in repository') {
 //      echo "upload"
