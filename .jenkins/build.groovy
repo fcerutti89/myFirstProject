@@ -19,7 +19,7 @@ node {
    stage('Dockerbuild') {
       checkout scm
       //docker.withRegistry('https://registry.example.com', 'credentials-id') {
-      def customImage = docker.build("my-image:${env.BUILD_ID}", "./.docker/build/Dockerfile")
+      def customImage = docker.build("my-image:${env.BUILD_ID}", "./.docker/build")
       //customImage.push()
       //}
    }
