@@ -19,7 +19,7 @@ node {
    stage('Dockerbuild') {
       checkout scm
       docker.withRegistry('http://10.142.0.3') {
-      def customImage = docker.build("myFirstProject:${env.BUILD_ID}", "./.docker/build")
+      def customImage = docker.build("myfirstproject:${env.BUILD_ID}", "./.docker/build")
       customImage.push()
       }
    }
