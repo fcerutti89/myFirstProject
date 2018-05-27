@@ -2,8 +2,9 @@
 FROM tomcat:8.0
 MAINTAINER Author f.cerutti@reply.it
 
-CMD pwd
+ENV CATALINA_HOME /usr/local/tomcat
+ENV PATH $CATALINA_HOME/bin:$PATH
 
-COPY /var/lib/jenkins/workspace/firstDockerPipeline/target/HelloWorld.war /usr/local/tomcat/webapps/
+ADD ./target/*.war $CATALINA_HOME/webapps/
 
 EXPOSE 10080
