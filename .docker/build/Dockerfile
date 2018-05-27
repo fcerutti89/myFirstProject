@@ -19,6 +19,6 @@ RUN set -x \
     && rm bin/*.bat \
     && rm tomcat.tar.gz*
 
-ADD ./target/*.war $CATALINA_HOME/webapps/
+ADD /var/lib/jenkins/workspace/firstDockerPipeline/target/HelloWorld.war $CATALINA_HOME/webapps/
 
 EXPOSE 10080
