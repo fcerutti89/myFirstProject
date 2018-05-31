@@ -18,7 +18,7 @@ node {
    }
    stage('Dockerbuild') {
       checkout scm
-      docker.withRegistry('http://10.142.0.3') {
+      docker.withRegistry('http://repo.tortuga.prv') {
       def customImage = docker.build("myfirstproject:${env.BUILD_ID}", ".")
       customImage.push()
       }
