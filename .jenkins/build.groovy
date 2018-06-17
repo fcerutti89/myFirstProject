@@ -23,7 +23,13 @@ node {
       customImage.push()
       }
    }
-//   stage('Upload dockerfile in repository') {
-//      echo "upload"
-//   }
+   stage('Deploy') {
+      kubernetesDeploy(
+      	kubeconfigId: 'admin-kube',
+        configs: '.k8s/kubeconfig.yml',
+        enableConfigSubstitution: true,
+        secretNamespace: 'test',
+        secretName: 'kubeadmin'
+		)
+   }
 }
