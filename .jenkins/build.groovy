@@ -31,7 +31,8 @@ node {
         configs: '.k8s/kubeconfig.yml',
         enableConfigSubstitution: true,
         secretNamespace: 'test',
-        secretName: 'kubeadmin'
+        secretName: 'kubeadmin',
+        serverUrl: 'https://repo.tortuga.prv'
 		)
    }
 }
