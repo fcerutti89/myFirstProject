@@ -28,7 +28,10 @@ node {
    stage('Deploy') {
       kubernetesDeploy(
       	kubeconfigId: 'admin-kube',
-        configs: '.k8s/kubeconfig.yml'
+        configs: '.k8s/kubeconfig.yml',
+        enableConfigSubstitution: true,
+        secretNamespace: 'test',
+        secretName: 'kubeadmin'
 		)
    }
 }
