@@ -11,4 +11,5 @@ ADD ./target/HelloWorld.war $CATALINA_HOME/webapps/
 ADD ./config/tomcat-users.xml $CATALINA_HOME/conf/
 ADD ./config/context.xml $CATALINA_HOME/webapps/manager/META-INF/
 
+
 EXPOSE 10080
