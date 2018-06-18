@@ -19,9 +19,9 @@ node {
    stage('Dockerbuild') {
       checkout scm
       docker.withRegistry('https://repo.tortuga.prv') {
-      def customImageLast = docker.build("myfirstproject:lastest", ".")
+      def customImageLast = docker.build("myproject:lastest", ".")
       customImageLast.push()
-      def customImage = docker.build("myfirstproject:${env.BUILD_ID}", ".")
+      def customImage = docker.build("myproject:${env.BUILD_ID}", ".")
       customImage.push()
       }
    }
