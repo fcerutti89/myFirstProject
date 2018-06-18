@@ -22,6 +22,7 @@ node {
       def customImageLast = docker.build("myproject:pippo", "--no-cache .")
       customImageLast.push()
       def customImage = docker.build("myproject:${env.BUILD_ID}", "--no-cache .")
+      
       customImage.push()
       }
    }
