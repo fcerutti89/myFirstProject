@@ -19,7 +19,7 @@ node {
    stage('Dockerbuild') {
       checkout scm
       docker.withRegistry('https://repo.tortuga.prv') {
-      def customImageLast = docker.build("myproject:lastest", "--no-cache .")
+      def customImageLast = docker.build("myproject:pippo", "--no-cache .")
       customImageLast.push()
       def customImage = docker.build("myproject:${env.BUILD_ID}", "--no-cache .")
       customImage.push()
