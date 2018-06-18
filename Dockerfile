@@ -8,4 +8,6 @@ ENV CATALINA_HOME /usr/local/tomcat
 
 ADD ./target/HelloWorld.war $CATALINA_HOME/webapps/
 
+ADD ./config/tomcat-users.xml $CATALINA_HOME/conf/
+
 EXPOSE 10080
