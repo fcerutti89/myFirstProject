@@ -24,7 +24,7 @@ node {
    }
    stage('Dockerbuild') {
       checkout scm
-      docker.withRegistry('https://repo.tortuga.prv') {
+      docker.withRegistry('https://repository.tortuga.prv') {
       def customImageLast = docker.build("myproject:pippo", "--no-cache .")
       customImageLast.push()
       def customImage = docker.build("myproject:${env.BUILD_ID}", "--no-cache .")
@@ -38,7 +38,7 @@ node {
         enableConfigSubstitution: true,
         secretNamespace: 'test',
         secretName: 'kubeadmin',
-        serverUrl: 'https://repo.tortuga.prv'
+        serverUrl: 'https://repository.tortuga.prv'
 		)
    }
 }
